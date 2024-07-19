@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="/">AI Trade Signals</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              
+
+              
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if current_user.is_authenticated %}
+
+              <div class="dropdown">
+                            <a class="nav-item nav-link" href="{{ url_for('ml7') }}" class="dropdown-toggle" data-toggle="dropdown">Deep Learning</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ url_for('ml1') }}">Next Day</a>
+                                <a class="dropdown-item" href="{{ url_for('ml7') }}">Next Week</a>
+                                <a class="dropdown-item" href="{{ url_for('ml30') }}">Next Month</a>
+                                <a class="dropdown-item" href="{{ url_for('ml365') }}">Next Year</a>
+                        </div>
+                    </div>
+
+
+                 <div class="dropdown">
+                            <a class="nav-item nav-link" href="{{ url_for('recent') }}" class="dropdown-toggle" data-toggle="dropdown">Earnings</a>
+                            <div class="dropdown-menu">
+                            
+                                <a class="dropdown-item" href="{{ url_for('recent') }}">Recent</a>
+                                <a class="dropdown-item" href="{{ url_for('upcoming') }}">Upcoming</a>
+                                <a class="dropdown-item" href="{{ url_for('all') }}">All</a>
+                                
+                        </div>
+                    </div>
+
+
+                <div class="dropdown">
+                            <a class="nav-item nav-link" href="{{ url_for('industrials') }}" class="dropdown-toggle" data-toggle="dropdown">Sectors</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ url_for('industrials') }}">Industrials</a>
+                                <a class="dropdown-item" href="{{ url_for('financials') }}">Financials</a>
+                                <a class="dropdown-item" href="{{ url_for('information_technology') }}">Information Technology</a>
+                                <a class="dropdown-item" href="{{ url_for('health_care') }}">Health Care</a>
+                                <a class="dropdown-item" href="{{ url_for('consumer_staples') }}">Consumer Staples</a>
+                                <a class="dropdown-item" href="{{ url_for('consumer_discretionary') }}">Consumer Discretionary</a>
+                                <a class="dropdown-item" href="{{ url_for('communication_services') }}">Communication Services</a>
+                                <a class="dropdown-item" href="{{ url_for('energy') }}">Energy</a>
+                                <a class="dropdown-item" href="{{ url_for('materials') }}">Materials</a>
+                                <a class="dropdown-item" href="{{ url_for('utilities') }}">Utilities</a>
+                                <a class="dropdown-item" href="{{ url_for('real_estate') }}">Real Estate</a>
+                        </div>
+                    </div>
+
+
+
+                
+                <a class="nav-item nav-link" href="{{ url_for('agent') }}">Deep Agents</a>
+                <a class="nav-item nav-link" href="{{ url_for('technicals') }}">Technicals</a>
+                <a class="nav-item nav-link" href="{{ url_for('blog') }}">Blogs</a>
+                <a class="nav-item nav-link" href="{{ url_for('new_post') }}">Post</a>
+                <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+              {% else %}
+
+                <div class="dropdown">
+                            <a class="nav-item nav-link" href="{{ url_for('ml7') }}" class="dropdown-toggle" data-toggle="dropdown">Deep Learning</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ url_for('about') }}">Next Day</a>
+                                <a class="dropdown-item" href="{{ url_for('about') }}">Next Week</a>
+                                <a class="dropdown-item" href="{{ url_for('about') }}">Next Month</a>
+                                <a class="dropdown-item" href="{{ url_for('about') }}">Next Year</a>
+                        </div>
+                    </div>
+
+
+
+                <div class="dropdown">
+                            <a class="nav-item nav-link" href="{{ url_for('about') }}" class="dropdown-toggle" data-toggle="dropdown">Earnings</a>
+                            <div class="dropdown-menu">
+                            
+                                <a class="dropdown-item" href="{{ url_for('about') }}">Recent</a>
+                                <a class="dropdown-item" href="{{ url_for('about') }}">Upcoming</a>
+                                <a class="dropdown-item" href="{{ url_for('about') }}">All</a>
+                                
+                        </div>
+                    </div>
+
+
+
+                <div class="dropdown">
+                            <a class="nav-item nav-link" href="{{ url_for('industrials') }}" class="dropdown-toggle" data-toggle="dropdown">Sectors</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Industrials</a>
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Financials</a>
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Information Technology</a>
+                                <a class="dropdown-item" href="{{ url_for('about') }}">Health Care</a>
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Consumer Staples</a>
+                                <a class="dropdown-item" href="{{ url_for('about' ) }}">Consumer Discretionary</a>
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Communication Services</a>
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Energy</a>
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Materials</a>
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Utilities</a>
+                                <a class="dropdown-item" href="{{  url_for('about') }}">Real Estate</a>
+                        </div>
+                    </div>
+
+
+
+
+                
+                <a class="nav-item nav-link" href="{{ url_for('about') }}">Deep Agents</a>
+                <a class="nav-item nav-link" href="{{ url_for('about') }}">Technicals</a>
+                <a class="nav-item nav-link" href="{{ url_for('about') }}">Blogs</a>
+                <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+                
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>Earnings Related</h3>
+            <p class='text-muted'>
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"> 
+                  <a href= "https://finance.yahoo.com/quote/GOOG/analysis?p=GOOG" >Analyst Estimates</a>
+                </li>
+                <li class="list-group-item list-group-item-light">Earnings Announcements</li>
+                <li class="list-group-item list-group-item-light">Earnings Calendars</li>
+                <li class="list-group-item list-group-item-light">Brag about your trades</li>
+               </ul> 
+               <br>
+               <!-- <h3>All Earnings Call Sentiments</h3>
+                
+                <ul>Negative Sentiments of All Earnings Calls</ul>
+                <img src="static/data/other/allnegative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of All Earnings Calls</ul>
+                <img src="static/data/other/allpositive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of All Earnings Calls</ul>
+                <img src="static/data/other/allneutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of All Earnings Calls</ul>
+                <img src="static/data/other/allpolarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of All Earnings Calls</ul>
+                <img src="static/data/other/allsubjectivity.png" alt="Chart" width=100%> -->
+
+
+
+
+                <h3>S&P 500 Earnings</h3>
+                
+                <ul>Negative Sentiments of sp500 Earnings Calls</ul>
+                <img src="static/data/other/sp500_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of sp500 Earnings Calls</ul>
+                <img src="static/data/other/sp500_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of sp500 Earnings Calls</ul>
+                <img src="static/data/other/sp500_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of sp500 Earnings Calls</ul>
+                <img src="static/data/other/sp500_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of sp500 Earnings Calls</ul>
+                <img src="static/data/other/sp500_subjectivity.png" alt="Chart" width=100%>
+
+                <h3>Industrials Sector</h3>
+                <ul>Negative Sentiments of Industrials Sector Earnings Calls</ul>
+                <img src="static/data/other/industrials_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Industrials Sector Earnings Calls</ul>
+                <img src="static/data/other/industrials_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Industrials Sector Earnings Calls</ul>
+                <img src="static/data/other/industrials_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Industrials Sector Earnings Calls</ul>
+                <img src="static/data/other/industrials_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Industrials Sector Earnings Calls</ul>
+                <img src="static/data/other/industrials_subjectivity.png" alt="Chart" width=100%>
+
+                <h3>Financials Sector</h3>
+                <ul>Negative Sentiments of Financials Sector Earnings Calls</ul>
+                <img src="static/data/other/financials_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Financials Sector Earnings Calls</ul>
+                <img src="static/data/other/financials_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Financials Sector Earnings Calls</ul>
+                <img src="static/data/other/financials_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Financials Sector Earnings Calls</ul>
+                <img src="static/data/other/financials_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Financials Sector Earnings Calls</ul>
+                <img src="static/data/other/financials_subjectivity.png" alt="Chart" width=100%>
+
+
+
+
+                <h3>Information Technology Sector</h3>
+                <ul>Negative Sentiments of Information Technology Sector Earnings Calls</ul>
+                <img src="static/data/other/information_technology_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Information Technology Sector Earnings Calls</ul>
+                <img src="static/data/other/information_technology_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Information Technology Sector Earnings Calls</ul>
+                <img src="static/data/other/information_technology_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Information Technology Sector Earnings Calls</ul>
+                <img src="static/data/other/information_technology_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Information Technology Sector Earnings Calls</ul>
+                <img src="static/data/other/information_technology_subjectivity.png" alt="Chart" width=100%>
+
+
+
+
+
+                <h3>Health Care Sector</h3>
+                <ul>Negative Sentiments of Health Care Sector Earnings Calls</ul>
+                <img src="static/data/other/health_care_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Health Care Sector Earnings Calls</ul>
+                <img src="static/data/other/health_care_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Health Care Sector Earnings Calls</ul>
+                <img src="static/data/other/Health_Care_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Health Care Sector Earnings Calls</ul>
+                <img src="static/data/other/Health_Care_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Health Care Sector Earnings Calls</ul>
+                <img src="static/data/other/Health_Care_subjectivity.png" alt="Chart" width=100%>
+
+                <h3>Real Estate Sector</h3>
+                <ul>Negative Sentiments of Real Estate Sector Earnings Calls</ul>
+                <img src="static/data/other/real_estate_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Real Estate Sector Earnings Calls</ul>
+                <img src="static/data/other/real_estate_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Real Estate Sector Earnings Calls</ul>
+                <img src="static/data/other/real_estate_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Real Estate Sector Earnings Calls</ul>
+                <img src="static/data/other/real_estate_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Real Estate Sector Earnings Calls</ul>
+                <img src="static/data/other/real_estate_subjectivity.png" alt="Chart" width=100%>
+
+                <h3>Communication Services Sector</h3>
+                <ul>Negative Sentiments of Communication Services Sector Earnings Calls</ul>
+                <img src="static/data/other/Communication_Services_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Communication Services Sector Earnings Calls</ul>
+                <img src="static/data/other/Communication_Services_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Communication Services Sector Earnings Calls</ul>
+                <img src="static/data/other/communication_services_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Communication Services Sector Earnings Calls</ul>
+                <img src="static/data/other/communication_services_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Communication Services Sector Earnings Calls</ul>
+                <img src="static/data/other/communication_services_subjectivity.png" alt="Chart" width=100%>
+
+
+                <h3>Consumer Discretionary Sector</h3>
+                <ul>Negative Sentiments of Consumer Discretionary Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Discretionary_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Consumer Discretionary Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Discretionary_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Consumer Discretionary Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Discretionary_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Consumer Discretionary Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Discretionary_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Consumer Discretionary Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Discretionary_subjectivity.png" alt="Chart" width=100%>
+
+                <h3>Consumer Staples Sector</h3>
+                <ul>Negative Sentiments of Consumer Staples Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Staples_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Consumer Staples Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Staples_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Consumer Staples Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Staples_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Consumer Staples Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Staples_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Consumer Staples Sector Earnings Calls</ul>
+                <img src="static/data/other/Consumer_Staples_subjectivity.png" alt="Chart" width=100%>
+
+                <h3>Energy Sector</h3>
+                <ul>Negative Sentiments of Energy Sector Earnings Calls</ul>
+                <img src="static/data/other/Energy_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Energy Sector Earnings Calls</ul>
+                <img src="static/data/other/Energy_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Energy Sector Earnings Calls</ul>
+                <img src="static/data/other/Energy_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Energy Sector Earnings Calls</ul>
+                <img src="static/data/other/Energy_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Energy Sector Earnings Calls</ul>
+                <img src="static/data/other/Energy_subjectivity.png" alt="Chart" width=100%>
+
+                <h3>Materials Sector</h3>
+                <ul>Negative Sentiments of Materials Sector Earnings Calls</ul>
+                <img src="static/data/other/Materials_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Materials Sector Earnings Calls</ul>
+                <img src="static/data/other/Materials_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Materials Sector Earnings Calls</ul>
+                <img src="static/data/other/Materials_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Materials Sector Earnings Calls</ul>
+                <img src="static/data/other/Materials_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Materials Sector Earnings Calls</ul>
+                <img src="static/data/other/Materials_subjectivity.png" alt="Chart" width=100%>
+
+                <h3>Utilities Sector</h3>
+                <ul>Negative Sentiments of Utilities Sector Earnings Calls</ul>
+                <img src="static/data/other/Utilities_negative.png" alt="Chart" width=100%>
+                <ul>Positive Sentiments of Utilities Sector Earnings Calls</ul>
+                <img src="static/data/other/Utilities_positive.png" alt="Chart" width=100%>
+                <ul>Neutral Sentiments of Utilities Sector Earnings Calls</ul>
+                <img src="static/data/other/Utilities_neutral.png" alt="Chart" width=100%>
+                <ul>Polarity Sentiments of Utilities Sector Earnings Calls</ul>
+                <img src="static/data/other/Utilities_polarity.png" alt="Chart" width=100%>
+                <ul>Subjectivity Sentiments of Utilities Sector Earnings Calls</ul>
+                <img src="static/data/other/Utilities_subjectivity.png" alt="Chart" width=100%>
+
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

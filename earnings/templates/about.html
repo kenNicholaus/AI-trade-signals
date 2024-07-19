@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="jumbotron">
+		<h3 style= "color:#3489eb;text-align:center;" class="display-5"> <strong> MAKE TRADING PROFIT USING AI </strong> </h3>
+        <br>
+
+        <p class="lead">Help Traders Make Money daily and before & after earnings calls</p>
+        <p class="lead">To access features subscribe for only $9.99</p>
+        <form action="{{ url_for('pay') }}" method="POST">
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_giO1Kioq5GylE2dIQGlEfdHr006dHPTvzL"
+            data-amount="999"
+            data-name="Profit from AI Trade"
+            data-description="The AI Trade Central"
+            data-image="../static/data/other/sumbit1.png"
+            data-locale="auto">
+          </script>
+        </form>
+        <br>
+
+        <h5 class="display-6">Indices, Sectors Sentiments</h5>
+        	<li>trade indices and sectors based on current earnings sentiment trends</li>
+        <br>
+
+        <h5 class="display-6">Daily Earnings Sentiments and trends by Company after announcement</h5>
+        	<li>trade individual companies before and after earnings release using the trends and strengths of sentiments</li>
+        <br>
+        <h5 class="display-6">Daily propritary AI Trading Buy/Sell recommendation(using 7800 features & accuracy of 99.5%)</h5>
+        	<li>get aheads up on what the algos are upto the next day. Use this knowledge to place profitable trades ahead</li>
+        <br>
+
+        <h5 class="display-6">24 Reinforcement Learning Agent Trading Signals</h5>
+        	<li>Use 24 reinforcement agent trade signals to make profitable trade decisions</li>
+        <br>
+
+        <h5 class="display-6">Blogging by ticker</h5>
+        	<li>blog your views on earnings prospects of a company and read what others have to say about company prospects</li>
+        <br>
+
+        <h5 class="display-6">Charts for 52 technicals for company announcing earnings & indices</h5>
+        	<li>like a pro, use 52 technicals to place your profitable trades</li>
+        <br>
+
+        <h5 class="display-6">Payment using stripe</h5>
+        	<li>pay safely and securely using stripe payment module</li>
+
+
+
+
+ </div>
+    
+{% endblock content %}

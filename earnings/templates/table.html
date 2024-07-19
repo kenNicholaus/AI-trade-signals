@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Sentiments Table</h2>
+    <style>
+    	table {
+
+    		border: 2px solid black;
+    		border-collapse: collapse;
+    		width: 50%;
+    	}
+
+		th, td {
+
+			border: 1px solid black;
+			padding: 5px;
+			text-align: center;
+		}
+
+		th {
+			background-color: lightgray;
+		}
+
+		button {
+			width: 200px;
+			height: 50px;
+			font-size: 24px;
+			background-color: green;
+
+
+		}
+
+		button:hover {
+			background-color: orange;
+		}
+
+    </style>
+    <table>
+    	<tr>
+    		<th>Date</th>
+    		<th>Company</th>
+    		<th>Quarter</th>
+    		<th>Negative</th>
+    		<th>Neutral</th>
+    		<th>Positive</th>
+    		<th>Polarity</th>
+    		<th>Subjectivity</th>
+    	</tr>
+    	<tr>
+    		<td>2019-10-16</td>
+    		<td>Q3</td>
+    		<td>BAC</td>
+    		<td>0.016</td>
+    		<td>0.776</td>
+    		<td>0.196</td>
+    		<td>0.162</td>
+    		<td>0.401</td>
+    	</tr>
+
+
+
+    </table>
+
+
+    <div>
+    	<nput name="agent" list="agents" placeholder="Agent">
+    	<datalist id="agents">
+    		<option value = "Turtle Trading agent">
+    		<option value = "Moving Average agent">
+    		<option value = "Signal Rolling agent">
+    		<option value = "Policy Gradient agent">
+    		<option value = "Q-learning agent">
+
+
+    </div>
+
+
+
+
+        
+        
+        
+
+
+{% endblock content %}

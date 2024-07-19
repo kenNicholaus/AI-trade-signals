@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+    
+   <!--  <button type="button" class="btn btn-success">Trade</button><br><br> -->
+
+    <h5>Utilities Earnings Call Sentiment Signals</h5>
+    <div class="grid">
+
+     {% for uti in utis %}
+     <div class="grid-item"><a href=#{{ loop.index }}>{{uti}}</a></div>
+     
+           
+     {% endfor %}
+    </div>
+    
+        <div class=container1>
+        {% for uti in utis %}
+        <div id={{ loop.index }}><br><br><br>
+        <h5>Earnings Call Signals: {{uti}} </h5>
+        <img src="\static\data\utilities\{{uti}}_positive.png" alt="Chart" width=100% >
+        <img src="\static\data\utilities\{{uti}}_negative.png" alt="Chart" width=100% >
+         </div>
+        {% endfor %}
+         
+         </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h3>Industrials Earnings Call Sentiment Signals</h3>
+    
+    <button type="button" class="btn btn-success">Trade</button>
+
+    <div class=container2>
+    <div class="row">
+     {% for ind in inds %}
+     <div class="col-lg-3 col-sm-6">
+               
+                <div><a href=#{{ loop.index }}>{{ind}}</a></div>
+            </div>
+           
+     {% endfor %}
+     </div>
+     </div>
+    
+        <div class=container1>
+        {% for ind in inds %}
+        <div id={{ loop.index }}><br><br><br>
+        <h3>{{ind}} </h3>
+        <img src="\static\data\industrials\{{ind}}_positive.png" alt="Chart" width=100% >
+        <img src="\static\data\industrials\{{ind}}_negative.png" alt="Chart" width=100% >
+         </div>
+        {% endfor %}
+         
+         </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

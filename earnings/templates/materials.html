@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+    
+   <!--  <button type="button" class="btn btn-success">Trade</button><br><br> -->
+    <h5>Materials Earnings Call Sentiment Signals</h5>
+
+    <div class="grid">
+
+     {% for mat in mats %}
+     <div class="grid-item"><a href=#{{ loop.index }}>{{mat}}</a></div>
+     
+           
+     {% endfor %}
+    </div>
+    
+        <div class=container1>
+        {% for mat in mats %}
+        <div id={{ loop.index }}><br><br><br>
+        <h5>Earnings Call Signals: {{mat}} </h5>
+        <img src="\static\data\materials\{{mat}}_positive.png" alt="Chart" width=100% >
+        <img src="\static\data\materials\{{mat}}_negative.png" alt="Chart" width=100% >
+         </div>
+        {% endfor %}
+         
+         </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

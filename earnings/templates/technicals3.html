@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h3>Technical Indicator Signals</h3>
+    
+    <button type="button" class="btn btn-success">Trade</button><br><br>
+
+    
+    <div class="col-lg-3 col-sm-6">
+      <form class="form-inline" action="{{ url_for('technicals') }}" method="post"> 
+        <div class="form-group">
+            <select class="form-control" name="ticker">
+                {% for symbol in symbols %}
+                    <option value="{{ symbol }}">{{ symbol }}</option>
+                {% endfor %}
+            </select>  
+                <button class="btn btn-success">View 150 Technicals for the choosen Ticker</button>   
+        </div>  
+      </form>
+    </div> 
+    
+    
+    
+    
+
+   <!--  <form action="{{ url_for('technicals') }}" method="post">
+    
+        <input type="text" name="ticker" placeholder="Enter The Ticker">
+        <button>View Signals</button>
+
+    </form> -->
+    <br>
+
+    {% if ticker %}
+        <h3>Technicals for Ticker: {{ticker}}</h3>
+    {% else %}
+        <h3>Technicals for Ticker: ^GSPC</h3>
+    {% endif %}
+
+
+    <div class=container2>
+    <div class="row">
+     {% for indicator in indicators %}
+     <div class="col-lg-3 col-sm-6">
+               
+                <div><a href=#{{ loop.index }}>{{indicator}}</a></div>
+            </div>
+           
+     {% endfor %}
+     </div>
+     </div>
+    
+        <div class=container1>
+        {% for indicator in indicators %}
+        <div id={{ loop.index }}><br><br><br>
+
+        {% if ticker %}  
+
+           <!--  <h4>Ticker: {{ticker}}   Technical Indicator: {{indicator}} </h4> -->
+            <img src="\static\data\technicals\{{ticker}}\{{indicator}}.png" alt="Chart" width=100% >
+
+        {% else %}
+
+          <!--   <h4>Ticker: ^GSPC   Technical Indicator: {{indicator}} </h4> -->
+            <img src="\static\data\technicals\^GSPC\{{indicator}}.png" alt="Chart" width=100% >
+        {% endif %}
+
+
+         </div>
+        {% endfor %}         
+         </div>
+
+
+{% endblock content %}
+

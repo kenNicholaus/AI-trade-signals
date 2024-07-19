@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block content %}
+    
+    
+    <!-- <button type="button" class="btn btn-success">Trade</button><br><br> -->
+
+    <h5>Communication Services Earnings Call Sentiment Signals</h5>
+    <div class="grid">
+
+     {% for com in coms %}
+     <div class="grid-item"><a href=#{{ loop.index }}>{{com}}</a></div>
+     
+           
+     {% endfor %}
+    </div>
+    
+        <div class=container1>
+        {% for com in coms %}
+        <div id={{ loop.index }}><br><br><br>
+        <h5>Earnings Call Signals: {{com}} </h5>
+        <img src="\static\data\communication_services\{{com}}_positive.png" alt="Chart" width=100% >
+        <img src="\static\data\communication_services\{{com}}_negative.png" alt="Chart" width=100% >
+         </div>
+        {% endfor %}
+         
+         </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

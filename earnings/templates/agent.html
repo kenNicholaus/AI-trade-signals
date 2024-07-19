@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- <h4>Reinforcement Agent Trading signals</h4> -->
+    
+    
+   <!--  <button type="button" class="btn btn-success">Trade</button><br><br>
+ -->
+    <div class="col-lg-3 col-sm-6">
+      <form class="form-inline" action="{{ url_for('agent') }}" method="post"> 
+        <div class="form-group">
+            <select class="form-control" name="ticker">
+                {% for symbol in symbols %}
+                    <option value="{{ symbol }}">{{ symbol }}</option>
+                {% endfor %}
+            </select>  
+                <button class="btn btn-success">Choose Ticker</button>   
+        </div>  
+      </form>
+    </div> 
+
+
+
+    <!-- <form action="{{ url_for('agent') }}" method="post">
+        <input type="text" name="ticker" placeholder="Enter The Ticker">
+        <button>View Signals</button>
+
+    </form> -->
+    <br>
+
+    {% if ticker %}
+        <h5>Reinforcement Agents for Ticker: {{ticker}}</h5>
+    {% else %}
+        <h5>Reinforcement Agents for Ticker: ^GSPC</h5>
+    {% endif %}
+
+
+    
+    <div class="grid">
+
+     {% for agent in agents %}
+     <div class="grid-item"><a href=#{{ loop.index }}>{{agent}}</a></div>
+     
+           
+     {% endfor %}
+    </div>
+
+    <div class=container1>
+        {% for agent in agents %}
+        <div id={{ loop.index }}><br><br><br>
+
+        {% if ticker %}
+
+          <!--   <h3>{{ticker}} {{agent}} </h3> -->
+          <!--   <img src="\static\data\agent\{{ticker}}\^GSPC{{agent}}.png" alt="Chart" width=100% > -->
+            <img src="\static\data\agent\{{agent}}\{{ticker}}.png" alt="Chart" width=100% >
+
+        {% else %}
+
+          <!--   <h3>^GSPC {{agent}} </h3> -->
+           <!--  <img src="\static\data\agent\^GSPC\^GSPC{{agent}}.png" alt="Chart" width=100% > -->
+           <img src="\static\data\agent\{{agent}}\^GSPC.png" alt="Chart" width=100% >
+
+
+        {% endif %}
+         </div>
+        {% endfor %}
+         
+         </div>
+
+    
+       
+
+{% endblock content %}

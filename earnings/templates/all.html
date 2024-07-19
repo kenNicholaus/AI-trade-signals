@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+{% block content %}
+ <!--    <h4>All Earnings Call Sentiments Trading Signals</h4> -->
+    
+  <!--   <button type="button" class="btn btn-success">Trade</button><br><br> -->
+
+  
+    <div class="col-lg-3 col-sm-6">
+      <form class="form-inline" action="{{ url_for('all') }}" method="post"> 
+        <div class="form-group">
+            <select class="form-control" name="ticker">
+                {% for symbol in symbols %}
+                    <option value="{{ symbol }}">{{ symbol }}</option>
+                {% endfor %}
+            </select>  
+                <button class="btn btn-success">Choose Ticker</button>   
+        </div>  
+      </form>
+    </div> 
+
+
+    <br>
+
+    
+
+
+
+    
+        <div class=container1>
+        
+
+        {% if ticker %}  
+
+            <h5>Earnings Call Sentiments Trend: {{ticker}}</h5>
+            <!-- <img src="static/data/Ticker/{{ticker}}_o.png" alt="Chart" width=100% > -->
+            <img src="static/data/Ticker/{{ticker}}.png" alt="Chart" width=100% >
+
+        {% else %}
+
+            <h5>Earnings Call Sentiments Trend: A</h5>
+          <!--   <img src="static/data/Ticker/AAPL_o.png" alt="Chart" width=100% > -->
+            <img src="static/data/Ticker/A.png" alt="Chart" width=100% >
+        {% endif %}
+
+
+         </div>
+       
+
+
+{% endblock content %}
+

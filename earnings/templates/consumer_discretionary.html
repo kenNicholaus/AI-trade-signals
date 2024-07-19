@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+    
+ <!--    <button type="button" class="btn btn-success">Trade</button><br><br> -->
+    <h5>Consumer Discretionary Earnings Call Sentiment Signals</h5>
+
+    <div class="grid">
+
+     {% for cd in cds %}
+     <div class="grid-item"><a href=#{{ loop.index }}>{{cd}}</a></div>
+     
+           
+     {% endfor %}
+    </div>
+    
+        <div class=container1>
+        {% for cd in cds %}
+        <div id={{ loop.index }}><br><br><br>
+        <h5>Earnings Call Signals: {{cd}} </h5>
+        <img src="\static\data\consumer_discretionary\{{cd}}_positive.png" alt="Chart" width=100% >
+        <img src="\static\data\consumer_discretionary\{{cd}}_negative.png" alt="Chart" width=100% >
+         </div>
+        {% endfor %}
+         
+         </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

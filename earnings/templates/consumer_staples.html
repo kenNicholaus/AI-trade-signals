@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    
+   <!--  <button type="button" class="btn btn-success">Trade</button><br><br> -->
+
+    <h5>Consumer Staples Earnings Call Sentiment Signals</h5> 
+    
+    <div class="grid">
+
+     {% for cs in css %}
+     <div class="grid-item"><a href=#{{ loop.index }}>{{cs}}</a></div>
+     
+           
+     {% endfor %}
+    </div>
+    
+        <div class=container1>
+        {% for cs in css %}
+        <div id={{ loop.index }}><br><br><br>
+        <h5>Earnings Call Signals: {{cs}} </h5>
+        <img src="\static\data\consumer_staples\{{cs}}_positive.png" alt="Chart" width=100% >
+        <img src="\static\data\consumer_staples\{{cs}}_negative.png" alt="Chart" width=100% >
+         </div>
+        {% endfor %}
+         
+         </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

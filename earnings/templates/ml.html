@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <h4>Deep Learning Trading Signals</h4>
+    
+    <button type="button" class="btn btn-success">Trade</button><br><br>
+
+  
+    <div class="col-lg-3 col-sm-6">
+      <form class="form-inline" action="{{ url_for('ml') }}" method="post"> 
+        <div class="form-group">
+            <select class="form-control" name="ticker">
+                {% for symbol in symbols %}
+                    <option value="{{ symbol }}">{{ symbol }}</option>
+                {% endfor %}
+            </select>  
+                <button class="btn btn-success">View Deep Learning Trading Signals for choosen Ticker</button>   
+        </div>  
+      </form>
+    </div> 
+
+
+    <br>
+
+    
+
+
+
+    
+        <div class=container1>
+        
+
+        {% if ticker %}  
+
+           <!--  <h3>{{ticker}} Machine Learning Trading Signals </h3> -->
+            <img src="static/data/ml/1D/{{ticker}}.png" alt="Chart" width=100% >
+            <img src="static/data/ml/1DP/{{ticker}}.png" alt="Chart" width=100% >
+
+        {% else %}
+
+        <!--     <h3>^GSPC Machine Learning Trading Signals</h3> -->
+            <img src="static/data/ml/1D/^GSPC.png" alt="Chart" width=100% >
+            <img src="static/data/ml/1DP/^GSPC.png" alt="Chart" width=100% >
+        {% endif %}
+
+
+         </div>
+       
+
+
+{% endblock content %}
+

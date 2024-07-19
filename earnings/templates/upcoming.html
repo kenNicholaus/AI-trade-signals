@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+    
+    <!-- <button type="button" class="btn btn-success">Trade</button><br><br> -->
+
+    <h5> Upcoming Earnings Call Sentiment Signals</h5>
+    <div class="grid">
+
+     {% for today in todays %}
+     <div class="grid-item"><a href=#{{ loop.index }}>{{today}}</a></div>
+     
+           
+     {% endfor %}
+    </div>
+    
+        <div class=container1>
+        {% for today in todays %}
+        <div id={{ loop.index }}><br><br><br>
+        <h4>{{today}} Earnings Call Sentiment Signals</h4>
+        <img src="\static\data\today\{{today}}.png" alt="Chart" width=100% >
+        <img src="\static\data\today\{{today}}_o.png" alt="Chart" width=100% >
+         </div>
+        {% endfor %}
+         
+         </div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
