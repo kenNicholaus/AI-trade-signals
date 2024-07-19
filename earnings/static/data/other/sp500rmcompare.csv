@@ -1,0 +1,6 @@
+Date,Company,Quarter,negative_rating,positive_rating,neutral_rating,polarity_rating,subjectivity_rating
+2019-11-07,MTD,Q3,More negative ,Less positive,More neutral,Higher polarity,Higher subjectivity
+2019-11-07,PNW,Q3,More negative ,Less positive,Less neutral,Lower polarity,Lower subjectivity
+2019-11-07,NWSA,Q1,Less negative,Less positive,More neutral,Lower polarity,Lower subjectivity
+2019-11-07,BKNG,Q3,Less negative,More positive,Less neutral,Higher polarity,Higher subjectivity
+2019-11-07,MNST,Q3,Less negative,Less positive,More neutral,Higher polarity,Higher subjectivity
