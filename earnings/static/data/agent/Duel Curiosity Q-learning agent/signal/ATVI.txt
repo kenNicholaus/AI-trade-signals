@@ -1,0 +1,2 @@
+model_run, signal_day, last_signal, total_gains, invest, data_start 
+ 2019-12-11 , 2019-10-22 , Trading Sell , 9.497722625732422 , 0.9497722625732422 , 2019-01-01
