@@ -3,7 +3,10 @@ AI trading signals prototype app authored by Kenneth Nicholaus. For educational 
 Does not contain codes for any propreitary AI developed by Kenneth Nicholaus.
 
 However all results are displayed as of year 2020
-Features: Uses thousands of propritary machine learning algorithms with very high accuracy. 
+
+
+Features: 
+Uses thousands of propritary machine learning algorithms with very high accuracy. 
 buy sell signals using propritary ai for 560 stocks
 earnings call sentiment signals trends by stocks and by sectors
 150 plus technical signals by stock
