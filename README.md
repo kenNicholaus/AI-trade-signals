@@ -6,12 +6,19 @@ However all results are displayed as of year 2020
 
 
 Features: 
-Uses thousands of propritary machine learning algorithms with very high accuracy. 
-buy sell signals using propritary ai for 560 stocks
-earnings call sentiment signals trends by stocks and by sectors
-150 plus technical signals by stock
-reinforcement learning signals 
-blog post
+
+Uses thousands of propritary machine learning algorithms with very high accuracy.
+
+buy sell signals using propritary ai for 560 stocks.
+
+earnings call sentiment signals trends by stocks and by sectors.
+
+150 plus technical signals by stock.
+
+reinforcement learning signals.
+
+blog post.
+
 payment gateway, login, user profile etc.
 
 Landing 
