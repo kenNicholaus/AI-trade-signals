@@ -11,8 +11,8 @@ from flask_mail import Message
 import stripe
 import pandas as pd
 
-pub_key = 'pk_test_giO1Kioq5GylE2dIQGlEfdHr006dHPTvzL'
-secret_key = 'sk_test_qbHWikrWqzZRpqZZNJd81ICs00nSUtIKvp'
+pub_key = 'xxxxx -test- pk_test_giO1Kioq5GylE2dIQGlEfdHr006dHPTvzL'
+secret_key = 'xxxxx -test = sk_test_qbHWikrWqzZRpqZZNJd81ICs00nSUtIKvp'
 
 stripe.api_key = secret_key
 
